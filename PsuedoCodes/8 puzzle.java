@@ -17,23 +17,6 @@ FUNCTION Move(state, direction):
     Return new state
 
 
-  FUNCTION Move(state, direction):
-
-    Find position (i, j) where tile = -1
-
-    IF direction = up AND i > 0:
-         swap (i, j) with (i−1, j)
-
-    IF direction = down AND i < 2:
-         swap (i, j) with (i+1, j)
-
-    IF direction = left AND j > 0:
-         swap (i, j) with (i, j−1)
-
-    IF direction = right AND j < 2:
-         swap (i, j) with (i, j+1)
-
-    Return new state
   
 FUNCTION DLS(state, depth, limit, last_move, goal):
 
@@ -56,7 +39,7 @@ FUNCTION DLS(state, depth, limit, last_move, goal):
 
     return FAILURE
 
-  FUNCTION IDDFS(start, goal):
+FUNCTION IDDFS(start, goal):
 
     FOR limit = 1 to 49:
          result = DLS(start, 0, limit, NONE, goal)
