@@ -21,3 +21,14 @@ A* Search(start, goal):
                 push (f_new, g_new, neighbor, path + neighbor) into open
 
     return failure
+
+heuristic(state, goal):
+    return number of misplaced tiles   // or Manhattan distance
+
+find_blank(state):
+    return position of 0 tile
+
+get_neighbors(state):
+    locate blank
+    swap blank with each valid adjacent tile
+    return all resulting states
