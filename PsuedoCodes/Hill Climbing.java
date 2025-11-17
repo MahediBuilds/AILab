@@ -1,19 +1,16 @@
-HILL-CLIMBING(initial_state):
+current ← a random state
 
-    current ← initial_state
+while true do
+    next ← get-best-neighbour(current)
 
-    loop:
-        neighbors ← all states reachable from current
+    if cost(current) ≤ cost(next) then
+        break
+    end if
 
-        if neighbors is empty:
-            return current     // no moves possible
+    current ← next
+end while
 
-        next ← neighbor with lowest heuristic value
-
-        if heuristic(next) ≥ heuristic(current):
-            return current     // no better neighbor → stop
-
-        current ← next
+return current
 
       
 h(n) = sum of |row difference| + |column difference| for each tile
